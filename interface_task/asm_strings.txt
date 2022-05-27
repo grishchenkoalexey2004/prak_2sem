@@ -1,0 +1,19 @@
+include console.inc
+.data
+A db 5
+B db 7
+C db 10
+.code
+mov byte ptr [esi],byte ptr [edi]
+cmp ebx,0
+je ebx_zero
+mov byte ptr [esi],byte ptr [edi]
+add ebx,100
+push ebx
+outwordln ebx
+ebx_zero:
+outwordln ecx
+inc ebx
+inc esi
+mov byte ptr [esi],byte ptr [edi]
+outstrln 'hello'
